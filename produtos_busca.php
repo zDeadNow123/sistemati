@@ -20,5 +20,5 @@ $totalLinhas = $lista->rowCount(); //rowCount() substituindo num_rows
                 <?php echo $linha['valor_produto'] ?>
             </td>
         </tr>
-    <?php } while ($linha = $lista->fetch(PDO::FETCH_ASSOC)) ?>
+    <?php } while ($linha = $lista -> fetch(PDO::FETCH_ASSOC)) ?>
 </table>
