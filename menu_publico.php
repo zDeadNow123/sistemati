@@ -6,12 +6,9 @@
     $tbtipos = "tbtipos";
     $ordenar = "rotulo_tipo";
     $consulta = "SELECT * FROM $tbtipos ORDER BY $ordenar";
-    //$consulta = "SELECT * FROM vw_tbprodutos ORDER BY $ordenar";
 
     $listaTipos = $conn -> query($consulta);
     $linhaTipo = $listaTipos -> fetch(PDO::FETCH_ASSOC);
-    //$totalLinhas = $listaTipos -> num_rows;
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +22,7 @@
         <div class="container-fluid">
             <!-- AGRUPAMENTO MOBILE -->
             <div class="navbar-header">
-                <button type="button" class="nav-toggle collapsed" data-toggle="collapse" data-target="#menuPublico" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuPublico" aria-expanded="false">
                     <span class="sr-only"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -62,11 +59,30 @@
                             <?php } while ($linhaTipo = $listaTipos -> fetch(PDO::FETCH_ASSOC)) ?>
                         </ul>
                     </li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                    <li><a href="index.php#contato">Contato</a></li>
+                    <li>
+                        <form action="produtos_busca.php" method="get" name="form_busca" id="form_busca" class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Busca produto" name="buscar" id="buscar" size="9" required>
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div><!-- FECHA INPUT GROUP -->
+                            </div>
+                        </form>
+                    </li>
+                    <li class="active">
+                        <a href="admin/index.php">
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;Admin
+                        </a>
+                    </li>
+                </ul> <!-- FECHA LISTA DE TIPOS -->
             </div><!-- FECHA NAV DIREITA -->
         </div><!-- FECHA CONTAINER-FLUID -->
     </nav>
 </body>
 </html>
+<?php ?>
