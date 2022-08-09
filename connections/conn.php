@@ -13,11 +13,12 @@
 
     try
     {
-        $conn = new PDO( 'mysql:host=' . $hostname_conn . ';dbname=' . $database_conn, $username_conn, $password_conn );
+        //$conn = new PDO('mysql:host='.$hostname_conn.';dbname='.$database_conn.';charset'.$charset_conn, $username_conn, $password_conn);
+        $conn = new PDO("mysql:host=$hostname_conn;dbname=$database_conn;port=$port_conn;charset=$charset_conn;", $username_conn, $password_conn);
     }
     catch ( PDOException $e )
     {
-        echo 'Erro ao conectar com o MySQL: ' . $e->getMessage();
+        echo 'Erro ao conectar com o MySQL: '.$e -> getMessage();
     }
 
     /*
