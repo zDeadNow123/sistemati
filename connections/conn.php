@@ -13,7 +13,6 @@
 
     try
     {
-        //$conn = new PDO('mysql:host='.$hostname_conn.';dbname='.$database_conn.';charset'.$charset_conn, $username_conn, $password_conn);
         $conn = new PDO("mysql:host=$hostname_conn;dbname=$database_conn;port=$port_conn;charset=$charset_conn;", $username_conn, $password_conn);
     }
     catch ( PDOException $e )
@@ -23,8 +22,7 @@
 
     /*
     // Definindo parâmetros da conexão
-    $conn = new mysqli($hostname_conn, $username_conn, $password_conn, $database_conn, $port_conn);
-
+    $conn2 = new mysqli($hostname_conn, $username_conn, $password_conn, $database_conn, $port_conn);
     // Definindo conjunto de caracteres da conexão
     mysqli_set_charset($conn, $charset_conn);
 
