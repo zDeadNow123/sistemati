@@ -25,12 +25,13 @@
         ?>
 
         <!-- ÁREA DE DESTAQUES -->
+        <a name="destaques">&nbsp;</a>
         <?php
         include('produtos_destaque.php');
         ?>
-        <a name="destaque">&nbsp;</a>
 
         <!-- ÁREA DE PRODUTOS EM GERAL -->
+        <a name="produtos">&nbsp;</a>
         <?php
         include('produtos_geral.php');
         ?>
