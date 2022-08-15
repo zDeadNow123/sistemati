@@ -1,7 +1,8 @@
 <?php
     include('connections/conn.php');
 
-    $consulta = "SELECT * from vw_tbprodutos order by descri_produto";
+    $idTipo = $_GET['id_tipo'];
+    $consulta = "SELECT * from vw_tbprodutos where id_tipo_produto = $idTipo order by descri_produto";
 
     $lista = $conn -> query($consulta);
     $linha = $lista -> fetch(PDO::FETCH_ASSOC);
@@ -13,13 +14,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos em Geral</title>
+    <title>Produtos por Tipo</title>
     <link rel="stylesheet" href="css/meu_estilo.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 </head>
 <body class="fundofixo">
+    <?php include ('menu_publico.php');?>
     <main class="container">
-        <h2 class="breadcrumb alert-danger">Produtos</h2>
+        <!-- teste se a consulta retornar vazia -->
+        <?php if($totalLinhas == 0) {?>
+            <h2 class="breadcrumb alert-danger">
+                <a href="javascript: window.history.go(-1)" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                Em breve teremos produtos deste tipo
+            </h2>
+        <?php } else {?>
+
+        <!-- Final do teste se a cousulta retornar vazia -->
         <div class="row"><!-- linha de produto -->
 
         <!-- Inicio estrutura de repetição -->
@@ -52,8 +64,10 @@
                     </div><!-- Final caption -->
                 </div>
             </div> <!-- Fecha thumbnail / card -->
-        <?php } while($linha=$lista->fetch(PDO::FETCH_ASSOC));?><!-- Final estrutura de repetição -->
+        <?php } while($linha=$lista->fetch(PDO::FETCH_ASSOC));}?><!-- Final estrutura de repetição -->
         </div><!-- final linha de produto -->
+        <!-- Rodapé -->
+        <?php include ('rodape.php')?>
     </main>
 
     <!-- LINKS DOS ARQUIVOS BOOTSTRAP -->
