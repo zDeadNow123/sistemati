@@ -39,9 +39,7 @@
 
         <!-- ÁREA DE RODAPÉ -->
         <footer>
-            <?php
-            include('rodape.php');
-            ?>
+            <?php include('rodape.php');?>
             <a name="contato">&nbsp;</a>
         </footer>
     </main>
