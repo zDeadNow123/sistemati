@@ -20,26 +20,20 @@
 
 
         <!-- ÁREA DO CAROUSEL -->
-        <?php
-        include('carousel.php');
-        ?>
+        <?php include('carousel.php'); ?>
 
         <!-- ÁREA DE DESTAQUES -->
         <a name="destaques">&nbsp;</a>
-        <?php
-        include('produtos_destaque.php');
-        ?>
+        <?php include('produtos_destaque.php'); ?>
 
         <!-- ÁREA DE PRODUTOS EM GERAL -->
         <a name="produtos">&nbsp;</a>
-        <?php
-        include('produtos_geral.php');
-        ?>
+        <?php include('produtos_geral.php'); ?>
         <hr>
 
         <!-- ÁREA DE RODAPÉ -->
         <footer>
-            <?php include('rodape.php');?>
+            <?php include('rodape.php'); ?>
             <a name="contato">&nbsp;</a>
         </footer>
     </main>
