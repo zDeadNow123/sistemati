@@ -1,3 +1,43 @@
+<?php
+    include('../connections/conn.php');
+    
+    // inicia verificação do login
+    if($_POST) {
+        // definindo o USE do banco de dados
+        
+        // mysqli_select_db($conn, $database_conn); (MYSQLI)
+        $conn -> exec("use $database_conn"); // PDO
+
+        // verifica o login e senha recebidos
+        $login_usuario = $_POST['login_usuario'];
+        $senha_usuario = $_POST['senha_usuario'];
+
+        $verificaSQL = "SELECT * from tbusuarios where login_usuario = $login_usuario and senha_usuario = $senha_usuario";
+        
+        // carregar os dados e verificar a linha de retorno, caso exista.
+        $lista_session = $conn -> query($verificaSQL);
+        $linha = $lista_session -> fetch(PDO::FETCH_ASSOC);
+        $numeroLinhas = $lista_session -> rowCount();
+
+        // se a sessão não existir, iniciamos uma sessão
+        if(!isset($_SESSION)) {
+            $sessao_antiga = session_name("chulettaaa");
+            session_start();
+            $sessao_name_new = session_name(); // recupera o nome atual
+        }
+
+        if($numeroLinhas > 0) {
+            $_SESSION['login_usuario'] = $login_usuario;
+            $_SESSION['nivel_usuario'] = $linha['nivel_usuario'];
+            $_SESSION['nome_da_sessao'] = session_name();
+            echo "<script>window.open('index.php','_self')</script>";
+        } else {
+            echo "<script>window.open('invasor.php','_self')</script>";
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,11 +46,10 @@
     <title>Login</title>
     <meta charset="utf-8">
     <!-- Link arquivos Bootstrap css -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script src="https://kit.fontawesome.com/2495680ceb.js" crossorigin="anonymous"></script>
     <link href="../css/meu_estilo.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/2495680ceb.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="fundofixo">
