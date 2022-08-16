@@ -45,7 +45,7 @@
         <div class="col-sm-6 col-md-4">
             <div class="panel-footer" style="background: none;">
                 <h4>Contatos</h4>
-                <form action="rodape_contato_envia.php">
+                <form action="rodape_contato_envia.php" method="POST">
                     <p>
                         <span class="input-group">
                             <span class="input-group-addon" id="basic-addon1">

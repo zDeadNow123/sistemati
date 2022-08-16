@@ -17,8 +17,6 @@
     ?>
     <a name="home"></a>
     <main class="container">
-
-
         <!-- ÁREA DO CAROUSEL -->
         <?php include('carousel.php'); ?>
 
@@ -40,7 +38,6 @@
     <!-- LINKS DOS ARQUIVOS BOOTSTRAP -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
