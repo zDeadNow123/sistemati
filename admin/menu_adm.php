@@ -28,12 +28,20 @@
                             Olá, <?php echo $_SESSION['login_usuario']; ?>
                         </button>
                     </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li class="active"><a href="index.php">Admin</a></li>
+                    <li><a href="produtos_lista.php">Produtos</a></li>
+                    <li><a href="tipos_lista.php">Tipos</a></li>
+                    <li><a href="usuarios_lista.php">Usuários</a></li>
+                    <li class="active">
+                        <a href="../index.php">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="logout.php">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                        </a>
+                    </li>
                 </ul>
             </div><!-- Fecha a Nav direita -->
         </div>
