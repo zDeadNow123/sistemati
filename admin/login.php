@@ -12,7 +12,7 @@
         $login_usuario = $_POST['login_usuario'];
         $senha_usuario = $_POST['senha_usuario'];
 
-        $verificaSQL = "SELECT * from tbusuarios where login_usuario = $login_usuario and senha_usuario = $senha_usuario";
+        $verificaSQL = "SELECT * from tbusuarios where login_usuario = '$login_usuario' and senha_usuario = '$senha_usuario'";
         
         // carregar os dados e verificar a linha de retorno, caso exista.
         $lista_session = $conn -> query($verificaSQL);
