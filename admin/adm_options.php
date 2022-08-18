@@ -32,7 +32,7 @@
             <div class="btn btn-group btn-group-justified" role="group">
                <!-- botão Listar -->
                 <div class="btn-group">
-                   <a href="produtos_lista.php">
+                   <a href="produto_lista.php">
                        <button class="btn btn-danger">
                             Listar
                         </button>
@@ -40,7 +40,7 @@
                 </div><!-- Fecha botão Listar -->
                 <!-- botão Inserir -->
                 <div class="btn-group">
-                   <a href="produtos_insere.php">
+                   <a href="produto_inserir.php">
                        <button class="btn btn-danger">
                             Inserir
                         </button>
@@ -72,7 +72,7 @@
             <div class="btn btn-group btn-group-justified" role="group">
                <!-- botão Listar -->
                 <div class="btn-group">
-                   <a href="tipos_lista.php">
+                   <a href="tipo_lista.php">
                        <button class="btn btn-warning">
                             Listar
                         </button>
@@ -80,7 +80,7 @@
                 </div><!-- Fecha botão Listar -->
                 <!-- botão Inserir -->
                 <div class="btn-group">
-                   <a href="tipos_insere.php">
+                   <a href="tipo_inserir.php">
                        <button class="btn btn-warning">
                             Inserir
                         </button>
@@ -112,7 +112,7 @@
             <div class="btn btn-group btn-group-justified" role="group">
                <!-- botão Listar -->
                 <div class="btn-group">
-                   <a href="usuarios_lista.php">
+                   <a href="usuario_lista.php">
                        <button class="btn btn-info">
                             Listar
                         </button>
@@ -120,7 +120,7 @@
                 </div><!-- Fecha botão Listar -->
                 <!-- botão Inserir -->
                 <div class="btn-group">
-                   <a href="usuarios_insere.php">
+                   <a href="usuario_inserir.php">
                        <button class="btn btn-info">
                             Inserir
                         </button>

@@ -42,7 +42,7 @@
                 <th>Valor</th>
                 <th>Imagem</th>
                 <th>
-                    <a href="produtos_inserir.php" class="btn btn-block btn-primary btn-xs">
+                    <a href="produto_inserir.php" class="btn btn-block btn-primary btn-xs">
                         <span class="hidden-xs">Adicionar<br></span>
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </a>
@@ -118,7 +118,7 @@
 
     <!-- Script para o Modal -->
     <script type="text/javascript">
-        $('.delete').on('click', () => {
+        $('.delete').on('click', function() {
         // busca o valor do atributo data-nome (botão excluir)
         let nome = $(this).data('nome');
         // busca o valor do atributo data-id (botão excluir)
