@@ -4,3 +4,10 @@
     background: url("../images/3.jpg") no-repeat fixed;
     background-size: cover;
 }
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
