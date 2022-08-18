@@ -59,7 +59,7 @@
                         <span class="hidden-xs"><?php echo $linha['nivel_usuario']; ?></span>
                     </td>
                     <td>
-                        <span class="hidden-xs"><?php echo $linha['senha_usuario']; ?></span>
+                        <span class="hidden-xs">************</span>
                     </td>
 
                     <td>
