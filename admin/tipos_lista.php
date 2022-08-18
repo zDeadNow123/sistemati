@@ -6,7 +6,7 @@
     include('../connections/conn.php');
 
     // Selecionando dados
-    $consulta = "select * from tb_usuarios order by login_usuario asc";
+    $consulta = "select * from tb_tipos order by login_usuario asc";
     
     // Buscar a lista completa de produtos
     $lista = $conn->query($consulta);
