@@ -16,6 +16,10 @@
 
     // Contar número de linhas da lista
     $total_linhas = $lista->rowCount();
+
+    function stringToAsterisks($string) {
+        return str_repeat("*", strlen($string)); 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +63,7 @@
                         <span class="hidden-xs"><?php echo $linha['nivel_usuario']; ?></span>
                     </td>
                     <td>
-                        <span class="hidden-xs">************</span>
+                        <span class="hidden-xs"><?php echo stringToAsterisks($linha['senha_usuario']); ?></span>
                     </td>
 
                     <td>
