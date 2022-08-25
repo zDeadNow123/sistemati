@@ -23,12 +23,13 @@ if ($_POST) {
     $resumo_produto = $_POST['resumo_produto'];
     $valor_produto = $_POST['valor_produto'];
     $imagem_produto = $nome_img;
+    $deletado = $_POST['deletado'];
 
     // Campo do form para filtrar o registro
     $id_filtro = $_POST['id_produto'];
 
     // Consulta (query) SQL para inserção dos dados
-    $query = "update tbprodutos set id_tipo_produto = '". $id_tipo_produto. "', destaque_produto = '" . $destaque_produto . "', descri_produto = '" . $descri_produto . "', resumo_produto = '" . $resumo_produto . "', valor_produto = " . $valor_produto . ", imagem_produto = '" . $imagem_produto . "' where id_produto = " . $id_filtro . ";";
+    $query = "update tbprodutos set id_tipo_produto = '". $id_tipo_produto. "', destaque_produto = '" . $destaque_produto . "', descri_produto = '" . $descri_produto . "', resumo_produto = '" . $resumo_produto . "', valor_produto = " . $valor_produto . ", imagem_produto = '" . $imagem_produto . "', deletado = $deletado where id_produto = " . $id_filtro . ";";
 
     $resultado = $conn->query($query);
 
@@ -118,6 +119,19 @@ if ($_POST) {
                                 </label>
                                 <label for="destaque_produto_n" class="radio-inline">
                                     <input type="radio" name="destaque_produto" id="destaque_produto" value="Não" <?php echo $linha['destaque_produto'] == "Não" ? "checked" : null; ?>>
+                                    Não
+                                </label>
+                            </div>
+                            <br>
+                            <!-- Radio deletado -->
+                            <label for="deletado"> Ativo? </label>
+                            <div class="input-group">
+                                <label for="deletado_s" class="radio-inline">
+                                    <input type="radio" name="deletado" id="deletado" value="null" <?php echo $linha['deletado'] == null ? "checked" : null; ?>>
+                                    Sim
+                                </label>
+                                <label for="deletado_n" class="radio-inline">
+                                    <input type="radio" name="deletado" id="deletado" value="default" <?php echo $linha['deletado'] != null ? "checked" : null; ?>>
                                     Não
                                 </label>
                             </div>

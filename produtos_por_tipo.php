@@ -2,7 +2,7 @@
     include('connections/conn.php');
 
     $idTipo = $_GET['id_tipo'];
-    $consulta = "SELECT * from vw_tbprodutos where id_tipo_produto = $idTipo order by descri_produto";
+    $consulta = "SELECT * from vw_tbprodutos where id_tipo_produto = $idTipo and deletado is null order by descri_produto";
 
     $lista = $conn -> query($consulta);
     $linha = $lista -> fetch(PDO::FETCH_ASSOC);
