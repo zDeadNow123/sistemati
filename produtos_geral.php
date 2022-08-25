@@ -1,7 +1,7 @@
 <?php
     include('connections/conn.php');
 
-    $consulta = "SELECT * from vw_tbprodutos order by descri_produto";
+    $consulta = "SELECT * from vw_tbprodutos where deletado is null order by descri_produto";
 
     $lista = $conn -> query($consulta);
     $linha = $lista -> fetch(PDO::FETCH_ASSOC);
