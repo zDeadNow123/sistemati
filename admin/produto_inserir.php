@@ -75,7 +75,7 @@
                             <label for="id_tipo_produto">Tipos:</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-task"></span>
+                                    <span class="glyphicon glyphicon-tasks"></span>
                                 </span>
                                 <select name="id_tipo_produto" id="" class="form-control" required>
                                     <?php do {?>
@@ -105,8 +105,8 @@
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
-                                    <input type="text" class="form-control" name="descri_produto" id="descri_produto" placeholder="Digite o título do produto" maxlength="100" required>
                                 </span>
+                                <input type="text" class="form-control" name="descri_produto" id="descri_produto" placeholder="Digite o título do produto" maxlength="100" required>
                             </div>
                             <br>
                             <label for="resumo_produto">Resumo:</label>

@@ -7,5 +7,5 @@
 
     $conn->query($remove);
 
-    header("Location: tipo_usuario.php");
+    header("Location: usuario_lista.php");
 ?>

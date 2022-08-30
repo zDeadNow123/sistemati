@@ -10,7 +10,11 @@ if ($_POST) {
     $rotulo_tipo = $_POST['rotulo_tipo'];
     $sigla_tipo = $_POST['sigla_tipo'];
 
-    $query = "INSERT INTO `tbtipos` (`sigla_tipo`, `rotulo_tipo`) VALUES ('$sigla_tipo', '$rotulo_tipo');";
+    // Campo do form para filtrar o registro
+    $id = $_POST['id_tipo'];
+
+    // Consulta (query) SQL para inserção dos dados
+    $query = "update tbtipos set sigla_tipo = '$sigla_tipo', rotulo_tipo = '$rotulo_tipo' where id_tipo = " . $id . ";";
 
     $resultado = $conn->query($query);
 
@@ -23,7 +27,12 @@ if ($_POST) {
     }
 
 }
-
+    // Consulta para recuperar dados do filtro da chamada da página...
+    $id_alterar = $_GET['id_tipo'];
+    $query_busca = "select * from tbtipos where id_tipo = " . $id_alterar;
+    $lista = $conn->query($query_busca);
+    $linha = $lista->fetch(PDO::FETCH_ASSOC);
+    $totalLinhas = $lista->rowCount();
 ?>
 
 <!DOCTYPE html>
@@ -48,12 +57,13 @@ if ($_POST) {
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </button>
                     </a>
-                    Inserindo Tipos
+                    Atualizando Tipos
                 </h2>
                 <div class="thumbnail">
                     <!-- Abre Thumbnail -->
                     <div class="alert alert-danger" role="alert">
-                        <form action="tipo_inserir.php" method="post" id="form_tipo_inserir" name="form_tipo_inserir" enctype="multipart/form-data">
+                        <form action="tipo_atualiza.php" method="post" id="form_tipo_atualiza" name="form_tipo_atualiza" enctype="multipart/form-data">
+                            <input type="hidden" name="id_tipo" id="id_tipo" value="<?php echo $linha['id_tipo']; ?>">
                             <label for="sigla_produto">Sigla:</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="sigla_tipo" name="sigla_tipo" maxlength="3" required value="" placeholder="Sigla">
@@ -63,7 +73,7 @@ if ($_POST) {
                                 <input type="text" class="form-control" id="rotulo_tipo" name="rotulo_tipo" maxlength="100" required value="" placeholder="Rotulo">&nbsp;
                             </div>
                                 <!-- Botão Enviar -->
-                                <input type="submit" value="Inserir" name="enviar" id="enviar" class="btn btn-danger btn-block">
+                                <input type="submit" value="Atualizar" name="enviar" id="enviar" class="btn btn-danger btn-block">
                         </form> <!-- Fim do Formulário -->
                     </div>
                 </div>

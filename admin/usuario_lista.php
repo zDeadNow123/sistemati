@@ -44,7 +44,7 @@
                 <th>Nível</th>
                 <th>Senha</th>
                 <th>
-                    <a href="tipos_inserir.php" class="btn btn-block btn-primary btn-xs">
+                    <a href="usuario_inserir.php" class="btn btn-block btn-primary btn-xs">
                         <span class="hidden-xs">Adicionar<br></span>
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </a>

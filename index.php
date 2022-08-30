@@ -17,6 +17,7 @@
 
     <!-- ÁREA DO MENU -->
     <?php
+    include('menu_reservas.php');
     include('menu_publico.php');
     ?>
     <a name="home"></a>

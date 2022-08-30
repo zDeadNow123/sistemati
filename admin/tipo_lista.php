@@ -39,7 +39,7 @@
                 <th>Sigla</th>
                 <th>Rotulo</th>
                 <th>
-                    <a href="tipos_inserir.php" class="btn btn-block btn-primary btn-xs">
+                    <a href="tipo_inserir.php" class="btn btn-block btn-primary btn-xs">
                         <span class="hidden-xs">Adicionar<br></span>
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </a>
@@ -68,20 +68,6 @@
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </button>
                     </td>
-                    
-
-                    <!--
-                    <td>
-                        <a href="produto_atualiza.php?id_produto=<?php //echo $linha['id_produto']; ?>" class="btn btn-warning btn-block btn-xs">
-                            <span class="hidden-xs">Alterar</span>
-                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                        </a>
-                        <button class="btn btn-danger btn-block btn-xs delete" role="button" role="button" data-nome="<?php echo $linha['descri_produto']; ?>" data-id="<?php echo $linha['id_produto']; ?>">
-                            <span class="hidden-xs">Excluir</span>
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </button>
-                    </td>
-                    -->
                 </tr><!-- Fecha linha da tabela -->
                 <?php } while($linha = $lista -> fetch(PDO::FETCH_ASSOC)); ?>
             </tbody><!-- Fecha corpo da tabela -->

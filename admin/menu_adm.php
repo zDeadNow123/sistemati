@@ -32,6 +32,7 @@
                     <li><a href="produto_lista.php">Produtos</a></li>
                     <li><a href="tipo_lista.php">Tipos</a></li>
                     <li><a href="usuario_lista.php">Usuários</a></li>
+                    <li><a href="reservas.php">Reservas</a></li>
                     <li class="active">
                         <a href="../index.php">
                             <span class="glyphicon glyphicon-home"></span>
